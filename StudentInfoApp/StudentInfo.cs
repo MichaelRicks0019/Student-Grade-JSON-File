@@ -21,11 +21,16 @@ namespace StudentInfoApp
             }
             set
             {
-                if (studentGrade > 0)
+                if (value > 0)
                 {
                     studentGrade = value;
                 }
             }
+        }
+
+        public override string ToString()
+        {
+           return  $"Id: {this.studentId} - Name: {this.StudentName} - Class Taken: {this.ClassTaken} - Student Grade: {this.StudentGrade}%";
         }
     }
 }

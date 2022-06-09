@@ -37,13 +37,14 @@ namespace StudentInfoApp
             this.nameLabel = new System.Windows.Forms.Label();
             this.classTakenLabel = new System.Windows.Forms.Label();
             this.StudentInfoPanel = new System.Windows.Forms.Panel();
+            this.saveToFileButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
             this.createButton = new System.Windows.Forms.Button();
             this.gradeLabel = new System.Windows.Forms.Label();
             this.studentsTextBox = new System.Windows.Forms.TextBox();
             this.studentsLabel = new System.Windows.Forms.Label();
-            this.saveToFileButton = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openSavedFileButton = new System.Windows.Forms.Button();
             this.StudentInfoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +105,7 @@ namespace StudentInfoApp
             // 
             // StudentInfoPanel
             // 
+            this.StudentInfoPanel.Controls.Add(this.openSavedFileButton);
             this.StudentInfoPanel.Controls.Add(this.saveToFileButton);
             this.StudentInfoPanel.Controls.Add(this.resetButton);
             this.StudentInfoPanel.Controls.Add(this.createButton);
@@ -117,8 +119,18 @@ namespace StudentInfoApp
             this.StudentInfoPanel.Controls.Add(this.idLabel);
             this.StudentInfoPanel.Location = new System.Drawing.Point(408, 78);
             this.StudentInfoPanel.Name = "StudentInfoPanel";
-            this.StudentInfoPanel.Size = new System.Drawing.Size(246, 303);
+            this.StudentInfoPanel.Size = new System.Drawing.Size(246, 324);
             this.StudentInfoPanel.TabIndex = 7;
+            // 
+            // saveToFileButton
+            // 
+            this.saveToFileButton.Location = new System.Drawing.Point(76, 243);
+            this.saveToFileButton.Name = "saveToFileButton";
+            this.saveToFileButton.Size = new System.Drawing.Size(105, 23);
+            this.saveToFileButton.TabIndex = 10;
+            this.saveToFileButton.Text = "Save To File";
+            this.saveToFileButton.UseVisualStyleBackColor = true;
+            this.saveToFileButton.Click += new System.EventHandler(this.saveToFileButton_Click);
             // 
             // resetButton
             // 
@@ -154,6 +166,7 @@ namespace StudentInfoApp
             this.studentsTextBox.Location = new System.Drawing.Point(67, 136);
             this.studentsTextBox.Multiline = true;
             this.studentsTextBox.Name = "studentsTextBox";
+            this.studentsTextBox.ReadOnly = true;
             this.studentsTextBox.Size = new System.Drawing.Size(275, 218);
             this.studentsTextBox.TabIndex = 8;
             // 
@@ -166,19 +179,19 @@ namespace StudentInfoApp
             this.studentsLabel.TabIndex = 9;
             this.studentsLabel.Text = "Students";
             // 
-            // saveToFileButton
-            // 
-            this.saveToFileButton.Location = new System.Drawing.Point(57, 243);
-            this.saveToFileButton.Name = "saveToFileButton";
-            this.saveToFileButton.Size = new System.Drawing.Size(144, 23);
-            this.saveToFileButton.TabIndex = 10;
-            this.saveToFileButton.Text = "SaveToFile";
-            this.saveToFileButton.UseVisualStyleBackColor = true;
-            this.saveToFileButton.Click += new System.EventHandler(this.saveToFileButton_Click);
-            // 
             // saveFileDialog1
             // 
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
+            // openSavedFileButton
+            // 
+            this.openSavedFileButton.Location = new System.Drawing.Point(76, 283);
+            this.openSavedFileButton.Name = "openSavedFileButton";
+            this.openSavedFileButton.Size = new System.Drawing.Size(105, 23);
+            this.openSavedFileButton.TabIndex = 11;
+            this.openSavedFileButton.Text = "Open Saved File";
+            this.openSavedFileButton.UseVisualStyleBackColor = true;
+            this.openSavedFileButton.Click += new System.EventHandler(this.openSavedFileButton_Click);
             // 
             // studentInfoForm
             // 
@@ -214,6 +227,7 @@ namespace StudentInfoApp
         private System.Windows.Forms.Label studentsLabel;
         private System.Windows.Forms.Button saveToFileButton;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button openSavedFileButton;
     }
 }
 
